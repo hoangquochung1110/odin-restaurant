@@ -7,6 +7,13 @@
     --underliner: rgba(61,61,60,0.2);
     --darker-night: rgba(0, 0, 0, 0.6);   
 }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 html {
     font-size: 10px;
@@ -46,11 +53,13 @@ nav a {
 
 #main {
     color: var(--burnt-orange);
+    padding-top: 2em;
 }
 
 #content__title {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1em;
     font-size: 2em;
 
@@ -70,24 +79,25 @@ nav a {
 }
 
 #restaurant-contact {
-    margin-top: 2em;
-    margin-left: 18em;
-    margin-right: 18em;
-    margin-bottom: auto;
-    /* max-height: 30vh; */
-
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 2em;
 }
 
-#restaurant-contact__info{
-    white-space: pre-wrap;
-    border-radius: .4em;
-    background-color: var(--scallop-seashell);
-    margin-bottom: 2em;
-}   
-
-#restaurant-contact__map{
-    border-radius: .4em;
+#restaurant-contact__sb {
+    margin: auto 12em;
 }
+
+#store-fl-box{
+    display: flex;
+    flex-basis: 50%;
+}
+
+.store-fl-box-item{
+    padding: 3em;
+}
+
 
 #menu-bg{
     width: 100%;
@@ -98,13 +108,13 @@ nav a {
 #food-menu{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2em;
     padding: 2em 5em;
 }
 
 .food-group{
     font-size: 1em;
     font-weight: bold;
-    margin-right: 8em;
 }
 
 .food-group div {
@@ -144,4 +154,28 @@ footer {
     position: absolute;
     bottom: 0;
     background: url('./images/dan-gold.jpeg');
+}
+
+/* Media queries */
+/* Mobile: width < 740px */
+@media only screen and (max-width: 74em){
+    html {
+        font-size: 6px;
+    }
+    #food-menu{
+        grid-template-columns: 1fr;
+    }
+    #restaurant-contact__sb {
+        margin: auto 2em;
+    }
+    #store-fl-box{
+        flex-flow: row wrap;
+    }
+
+}   
+/* Tablet: 740px <= width < 1024px */
+@media only screen and (min-width:74em) and (max-width:102.4em){
+    html{
+        font-size: 10px;
+    }
 }
