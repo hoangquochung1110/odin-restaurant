@@ -10,6 +10,7 @@ import {
     grilledPawn,
     grilledBanana
 } from './menu-items';
+import { LeDuan01, HamNghi77} from './restaurant-stores';
 
 var mainCourseList = [], snackList = [], dessertList = [], seafoodList = []; // implement caching
 [
@@ -60,7 +61,7 @@ function loadHome(main){
     img.src = 'images/vietnam.png';
 
     const brandName = document.createElement('h5');
-    brandName.innerText = 'MOXU RESTAURANT';
+    brandName.innerText = 'MOXU BISTRO';
 
     title.appendChild(img);
     title.appendChild(brandName);
@@ -82,15 +83,29 @@ function loadContact(main){
     contact.setAttribute('id', 'restaurant-contact');
     main.appendChild(contact);
 
-    const info = document.createElement('div');
-    info.setAttribute('id', 'restaurant-contact__info');
-    info.textContent = ` 📞 84 934 022 111\n 🏢 01 Le Duan Blvd, Ho Chi Minh city\n ✉️ moxures@example.com`;
-    contact.appendChild(info);
+    const subBox = document.createElement('div');
+    subBox.setAttribute('id', 'restaurant-contact__sb');
+    contact.appendChild(subBox);
 
-    const map = document.createElement('div');
-    map.setAttribute('id', 'restaurant-contact__map');
-    map.innerHTML = `<img src="images/moxu-location.png" style="max-width:100%; border-radius: .4em";>`;
-    contact.appendChild(map);
+    const mealAtMoxu = document.createElement('h2');
+    mealAtMoxu.textContent = 'A meal at Moxu Bistro';
+    mealAtMoxu.style.textAlign = 'center';
+    subBox.appendChild(mealAtMoxu);
+
+    const moxuOffer = document.createElement('p');
+    moxuOffer.textContent = `The offers here start with the décor – retro and elegant, making you temporarily forget the urban chaos out there. 
+        Our food complements that with the scents, the colors, and the presentation! 
+        You would want more and more for all the right reasons!`
+    moxuOffer.style.textAlign = 'center';
+    subBox.appendChild(moxuOffer);
+
+    const storeBox = document.createElement('div');
+    storeBox.setAttribute('id', 'store-fl-box');
+    contact.appendChild(storeBox);
+
+    storeBox.appendChild(loadStore(LeDuan01));
+    storeBox.appendChild(loadStore(HamNghi77));
+    
 }   
 
 function loadMenu(main){
@@ -142,7 +157,7 @@ function loadMenu(main){
 
 }
 
-function loadMenuItem(obj, container){
+function loadMenuItem(obj){
     const menuItem = document.createElement('div');
     menuItem.classList.add('menu-item');
 
@@ -158,5 +173,32 @@ function loadMenuItem(obj, container){
     menuItem.appendChild(foodDescription);
 
     return menuItem;
+}
+
+function loadStore(obj){
+
+    const store = document.createElement('div');
+    store.classList.add('store-fl-box-item');
+
+    const storeImg = document.createElement('img');
+    storeImg.src = obj.imgURL;  
+    storeImg.style.height = '15em';
+    storeImg.style.width = '100%';  
+    store.appendChild(storeImg);
+    
+    const storeName = document.createElement('h2');
+    storeName.textContent = `${obj.name}`;
+    store.appendChild(storeName);   
+
+    const storeDescrption = document.createElement('h4');
+    storeDescrption.textContent = `${obj.description}`;
+    storeDescrption.style.fontWeight = 'lighter';
+    store.appendChild(storeDescrption);
+
+    const storeAddress = document.createElement('h4');
+    storeAddress.textContent = `${obj.address}`;
+    store.appendChild(storeAddress);
+
+    return store;
 }
 export {loadMain};

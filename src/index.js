@@ -6,7 +6,7 @@ init();
 function init(){
     createNav();
     createMain();
-    createFooter();
+    //createFooter();
     if (!location.hash)
     {
         location.hash = '#menu';
