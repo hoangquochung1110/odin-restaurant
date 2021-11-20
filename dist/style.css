@@ -14,90 +14,123 @@
     padding: 0;
     margin: 0;
 }
-
+::placeholder{
+    color: var(--burnt-orange);
+}
 html {
     font-size: 10px;
+    font-family: 'M PLUS 1', sans-serif;
 }
 body { 
     background-color: var(--champagne);
-    font-family: “Playfair Display”, “Didot”, "Times New Roman", Times, serif; 
     font-size: 2em;
     margin: 0;
 }
 
+.fixed-nav nav{
+    position: fixed;
+    box-shadow: 0 2px rgb(0 0 0 / 20%);
+}
+
 nav {
-    height: 3em;
+    background: var(--scallop-seashell);
+    top: 0;
+    width: 100%;
+    transition:all 0.5s;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+nav li {
+    flex: 1;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    object-fit: cover;
-    background: url('./images/jimmy-dean.jpg');
-}
-
-#nav-brandname{
-    position: absolute;
-    left: 0;
-    margin-left: 2em;
     color: var(--amber);
-    font-weight: bolder;
 }
-
 nav a {
-    color: var(--amber);
-    margin: 1em 2em;
-    border: none;
-    background-color: inherit;
-    font-weight: bolder;
     text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+    color: var(--burnt-orange);
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+li#nav-brandname {
+    max-width: 0;
+    overflow: hidden;
+    background: var(--burnt-orange);
+    transition: all 0.5s;
+    font-weight: 600;
+}
+.fixed-nav li#nav-brandname {
+    max-width: 400px;
 }
 
 #main {
     color: var(--burnt-orange);
-    padding-top: 2em;
-}
-
-#content__title {
+    height: 100vh;
+    background-image: url('./images/sanwa-limbu.jpg');
+    background-position: top center;
+    object-fit: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1em;
-    font-size: 2em;
-
-}
-
-#content___title h5{
-    color: var(--red-orange);
-}
-
-#vietnam-flag {
-    max-width: 3em;
-    max-height: 3em;
-}
-
-#content__subtitle {
-    margin: auto 4em;
-}
-
-#restaurant-contact {
-    display: flex;
-    justify-content: center;
     flex-direction: column;
-    row-gap: 2em;
 }
 
-#restaurant-contact__sb {
-    margin: auto 12em;
+#homepage{
+    text-align: center;
 }
 
-#store-fl-box{
-    display: flex;
-    flex-basis: 50%;
+#homepage__title{
+    margin: auto 0%;
+    letter-spacing: .2em;
+    font-size: 2em;
+    border-top: 3px solid whitesmoke;
+    border-bottom: 3px solid whitesmoke;
+
 }
 
-.store-fl-box-item{
-    padding: 3em;
+#contactpage{
+    border: 2px dashed var(--amber);
+    margin: auto 30%;
+    text-align: center;
+    padding: 0 10px;
+}
+#order-title{
+    font-size: 1.5em;
+    font-family: 'Comfortaa', cursive;
+    padding: 1% 0;
+}
+.order-input-style{
+    border: 4px solid var(--amber);
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;	
+    margin: 4% auto;
+    color: var(--burnt-orange);
 }
 
+input, select{
+    width: 100%;
+    background-color: inherit;
+}
+
+#order-confirm-btn-style{
+    border: 4px solid var(--amber);
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+    width: 20%;
+    margin: 2% 30%;
+    background-color: var(--burnt-orange);
+}
 
 #menu-bg{
     width: 100%;
@@ -110,6 +143,7 @@ nav a {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2em;
     padding: 2em 5em;
+    border: 2px dashed var(--amber);
 }
 
 .food-group{
@@ -148,12 +182,38 @@ nav a {
     margin-bottom: 1.5em;
 }
 
+#order-now{
+    padding-top: 5%;
+    font-size: 2.5em;
+    font-style: oblique;
+    text-shadow: 5px 5px 2px var(--scallop-seashell);
+}
+
 footer {
-    height: 3em;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background: url('./images/dan-gold.jpeg');
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--scallop-seashell);
+    color: var(--burnt-orange);
+}
+
+#footer__faq{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5%;
+}
+
+#footer__faq div {
+    font-size: .5em;
+}
+
+#social-list {
+    min-width: 5em;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 2em;
 }
 
 /* Media queries */

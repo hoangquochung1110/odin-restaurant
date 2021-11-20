@@ -29,7 +29,7 @@ const friedChicken = new foodItem(
 );
 
 const blackBean = new foodItem(
-    'Chè đậu đen thạch chân trâu',
+    'Chè đậu đen thạch trân châu',
     'dessert',
     1.5,
     'Black beans stewed with sugar water, with pearls, black jelly...'

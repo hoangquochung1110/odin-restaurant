@@ -1,12 +1,13 @@
-import {createMain, createNav, createFooter} from './modules/element-initializer';
-import {loadMain} from './modules/element-loader';
-
+import {loadMain} from './modules/main-loader';
+import { createNav } from './modules/nav';
+import { createFooter } from './modules/footer';
+const content = document.querySelector('#content');
 
 init();
 function init(){
     createNav();
     createMain();
-    //createFooter();
+    createFooter();
     if (!location.hash)
     {
         location.hash = '#menu';
@@ -15,3 +16,8 @@ function init(){
     window.addEventListener('hashchange', loadMain);
 }
 
+function createMain(){
+    const main = document.createElement('main');
+    main.setAttribute('id', 'main');
+    content.appendChild(main);
+}
