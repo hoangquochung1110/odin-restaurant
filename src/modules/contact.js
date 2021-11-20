@@ -54,7 +54,7 @@ function loadContact(main){
     row.appendChild(timeColumn);
 
     const confirmer = document.createElement('div');
-    confirmer.innerHTML = `<input type="submit" value="Confirm" id="order-confirm-btn-style">`;
+    confirmer.innerHTML = `<input type="submit" value="CONFIRM" id="order-confirm-btn-style">`;
     form.appendChild(confirmer);
 
 }   
