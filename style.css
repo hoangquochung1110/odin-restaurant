@@ -154,10 +154,6 @@ input, select{
     font-weight: bold;
 }
 
-.food-group div {
-    font-weight: lighter;
-}
-
 .menu-item {
     font-size: .6em;
     margin-bottom: 1em;
@@ -167,6 +163,11 @@ input, select{
     display: grid;
     grid-template-columns: max-content 1fr max-content; 
     grid-column-gap: .5em;
+}
+
+.menu_item__description{
+    font-style: oblique;
+    font-weight: 400;
 }
 
 .underline {
