@@ -84,11 +84,6 @@ function loadMenu(main){
     orderNow.appendChild(inner);
     orderNow.setAttribute('id', 'order-now');
     main.appendChild(orderNow);
-    orderNow.addEventListener('mousemove', (e) =>{
-        console.log('a');
-        shadowEffect(e, orderNow);
-    })
-    
 }
 
 function loadMenuItem(obj){
@@ -100,9 +95,9 @@ function loadMenuItem(obj){
     foodName.innerHTML = `<span>${obj.name}</span><span class="underline"></span><span>$${obj.price}</span>`;
 
     const foodDescription = document.createElement('div');
+    foodDescription.classList.add('menu_item__description');
     foodDescription.textContent = obj.description;
     foodDescription.style.fontStyle = 'oblique';
-    foodDescription.style.fontSize = '.7em';    
 
     menuItem.appendChild(foodName);
     menuItem.appendChild(foodDescription);
@@ -110,25 +105,4 @@ function loadMenuItem(obj){
     return menuItem;
 }
 
-function shadowEffect(e, target){
-    console.log(e);
-    const walk = 1; //10px
-    const {offsetWidth: width, offsetHeight: height} = target;
-    let {offsetX: x, offsetY: y} = e;
-
-    if (this !== e.target) {
-        x = x + e.target.offsetLeft;
-        y = y + e.target.offsetTop;
-    }
-
-      const xWalk = Math.round((x / width * walk) - (walk / 2));
-      const yWalk = Math.round((y / height * walk) - (walk / 2));
-
-      target.firstChild.style.textShadow = `
-        ${xWalk}px ${yWalk}px 0 rgba(255,0,255,0.7),
-        ${xWalk * -1}px ${yWalk}px 0 rgba(0,255,255,0.7),
-        ${yWalk}px ${xWalk * -1}px 0 rgba(0,255,0,0.7),
-        ${yWalk * -1}px ${xWalk}px 0 rgba(0,0,255,0.7)
-      `;
-}
 export {loadMenu};
