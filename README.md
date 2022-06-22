@@ -27,6 +27,13 @@ Distribution files can be produced using:
 npm run build
 ```
 
+Deploy to GH Pages
+Our output html file is in `dist` folder while GH pages is looking for an index.html in the root directory of the project. So there's more work to do to host your completed page.
+According to [this gist](https://gist.github.com/cobyism/4730490)
+```
+git subtree push --prefix dist origin gh-pages
+```
+
 ## Improvements
 * Responsive Design
 * Stateful Single Page App
