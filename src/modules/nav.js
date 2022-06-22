@@ -1,5 +1,6 @@
 function createNav(){
     const navBar = document.createElement('nav');
+    navBar.classList.add("fixed-nav");
     content.appendChild(navBar);
 
     const unorderList = document.createElement('ul');
