@@ -238,11 +238,27 @@ footer {
     #store-fl-box{
         flex-flow: row wrap;
     }
+}  
 
-}   
 /* Tablet: 740px <= width < 1024px */
 @media only screen and (min-width:74em) and (max-width:102.4em){
     html{
         font-size: 10px;
     }
+}
+
+/* Animation */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#food-menu, #homepage, #contactpage{
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
