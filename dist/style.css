@@ -27,8 +27,10 @@ body {
     margin: 0;
 }
 
-.fixed-nav nav{
+.fixed-nav{
     position: fixed;
+    top: 0;
+    width: 100%;
     box-shadow: 0 2px rgb(0 0 0 / 20%);
 }
 
@@ -78,6 +80,7 @@ li#nav-brandname {
     color: var(--scallop-seashell);
     height: 100vh;
     background-image: url('./images/sanwa-limbu.jpg');
+    background-size: cover;
     background-position: top center;
     object-fit: cover;
     display: flex;

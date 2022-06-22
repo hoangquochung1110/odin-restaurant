@@ -97,7 +97,6 @@ function loadMenuItem(obj){
     const foodDescription = document.createElement('div');
     foodDescription.classList.add('menu_item__description');
     foodDescription.textContent = obj.description;
-    foodDescription.style.fontStyle = 'oblique';
 
     menuItem.appendChild(foodName);
     menuItem.appendChild(foodDescription);
