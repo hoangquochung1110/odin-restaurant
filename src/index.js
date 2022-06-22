@@ -1,3 +1,4 @@
+import './css/style.css';
 import {loadMain} from './modules/main-loader';
 import { createNav } from './modules/nav';
 import { createFooter } from './modules/footer';

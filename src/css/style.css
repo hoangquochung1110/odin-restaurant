@@ -79,7 +79,7 @@ li#nav-brandname {
 #main {
     color: var(--scallop-seashell);
     height: 100vh;
-    background-image: url('./images/sanwa-limbu.jpg');
+    background-image: url('../images/sanwa-limbu.jpg');
     background-size: cover;
     background-position: top center;
     object-fit: cover;
